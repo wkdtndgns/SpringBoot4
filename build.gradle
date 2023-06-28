@@ -3,6 +3,7 @@ plugins {
     id 'war'
     id 'org.springframework.boot' version '2.7.12'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'application'
 }
 
 group = 'com.example'
@@ -12,6 +13,10 @@ java {
     sourceCompatibility = '11'
 }
 
+application {
+    mainClass = 'Pack.SpringBoot4Application'
+}
+
 repositories {
     mavenCentral()
     maven { url 'https://repo.spring.io/milestone' }
@@ -19,18 +24,13 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper
-    implementation 'org.springdoc:springdoc-openapi-ui:1.5.9'
-    implementation 'org.webjars:webjars-locator-core:0.46'
-
     implementation 'org.springframework.boot:spring-boot-starter-web'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.8.6'
-    runtimeOnly 'mysql:mysql-connector-java:8.0.26'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation("javax.servlet:jstl:1.2")
+
     implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

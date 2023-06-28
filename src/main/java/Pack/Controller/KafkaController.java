@@ -1,9 +1,7 @@
 package Pack.Controller;
 
-import Pack.Entity.User;
 import Pack.Service.KafkaConsumer;
 import Pack.Service.KafkaProducer;
-import Pack.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
