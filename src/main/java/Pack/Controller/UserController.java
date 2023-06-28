@@ -2,6 +2,7 @@ package Pack.Controller;
 
 import Pack.Entity.User;
 import Pack.Service.UserService;
+import jdk.jfr.Description;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
@@ -27,6 +28,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/user")
+    @Description("이거는 사용자 ")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
@@ -57,10 +59,8 @@ public class UserController {
             if (image.isEmpty()) {
                 return "No image file provided.";
             }
-
             // 파일명 생성
             String fileName = StringUtils.cleanPath(image.getOriginalFilename());
-
             // 이미지를 저장할 경로 지정
             String uploadDir = "src/main/resources/static/img";
             String filePath = uploadDir + "/" + fileName;
