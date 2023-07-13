@@ -23,10 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @CrossOrigin("*")
 public class UserController {
-
+    
     @Autowired
     private UserService userService;
-
     @PostMapping("/user")
     @Description("이거는 사용자 ")
     public User createUser(@RequestBody User user) {
