@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mapper namespace="Mapper">
+
+  <select id="test01" >
+    select name1 from t_temp01
+  </select>
+</Mapper>
