@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Mapper namespace="Mapper">
-
-  <select id="test01" >
-    select name1 from t_temp01
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper">
+  <select id="test01" resultType="String">
+      select name1 from t_temp01
   </select>
-</Mapper>
+
+  <insert id="test02" parameterType="String">
+    insert into t_temp01(name1,name2) values(#{name},#{name})
+  </insert>
+
+  <update id="test03" parameterType="String">
+    update t_temp01 set name1 = 'update' where name1 = #{name}
+  </update>
+
+  <delete id="test04" parameterType="String">
+    delete from t_temp01 where name1 = #{name}
+  </delete>
+
+  <insert id="test05" parameterType="Pack.Person">
+    insert into t_temp01(name1,name2) values(#{name1},#{name2})
+  </insert>
+
+  <select id="test06" resultType="Pack.Person">
+    select name1,name2 from t_temp01
+  </select>
+
+</mapper>

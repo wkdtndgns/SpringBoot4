@@ -29,7 +29,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    implementation 'org.mybatis:mybatis:3.5.7'
+    implementation 'mysql:mysql-connector-java:8.0.26'
+    implementation 'commons-dbcp:commons-dbcp:1.4'
+    implementation 'org.apache.maven.plugins:maven-compiler-plugin:3.8.1'
     runtimeOnly 'mysql:mysql-connector-java:8.0.26'
     implementation("javax.servlet:jstl:1.2")
     implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
